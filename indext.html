@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AURUM | Asesoría Empresarial</title>
+
+    <meta name="description"
+          content="AURUM - Asesoría fiscal, contable, laboral, financiera y legal.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* ==============================
+           COLORES
+        ============================== */
+
+        :root {
+            --azul: #071522;
+            --azul-claro: #0d1d2d;
+            --dorado: #d2a84f;
+            --dorado-claro: #f0d28a;
+            --blanco: #ffffff;
+            --crema: #f8f6f1;
+            --texto: #26313b;
+            --gris: #697581;
+            --borde: #e6e1d7;
+            --sombra: 0 18px 50px rgba(7, 21, 34, 0.12);
+        }
+
+
+        /* ==============================
+           GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            color: var(--texto);
+            background: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7, 21, 34, 0.95);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid rgba(240, 210, 138, 0.12);
+        }
+
+        .navbar {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            width: 105px;
+            height: 65px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 4px;
+        }
+
+
+        /* MENU */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            color: white;
+
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dorado-claro);
+        }
+
+        .nav-cta {
+            padding: 10px 18px;
+
+            border:
+                1px solid var(--dorado);
+
+            border-radius: 5px;
+
+            color: var(--dorado-claro) !important;
+        }
+
+        .menu {
+            display: none;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            padding:
+                120px 0
+                70px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 78% 25%,
+                    rgba(210,168,79,0.16),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #071522,
+                    #0d1d2d
+                );
+
+            color: white;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.05fr
+                0.95fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .hero-kicker {
+            display: inline-block;
+
+            color: var(--dorado-claro);
+
+            border:
+                1px solid
+                rgba(240,210,138,0.45);
+
+            padding: 7px 14px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size:
+                clamp(
+                    44px,
+                    6vw,
+                    74px
+                );
+
+            line-height: 1.05;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--dorado);
+        }
+
+        .hero p {
+            color: #d6dee5;
+
+            font-size: 18px;
+
+            max-width: 640px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* BOTONES */
+
+        .buttons {
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 21px;
+
+            border-radius: 5px;
+
+            font-weight: 600;
+
+            transition: 0.25s;
+
+            cursor: pointer;
+
+            border: none;
+        }
+
+        .btn-gold {
+            background: var(--dorado);
+
+            color: var(--azul);
+        }
+
+        .btn-gold:hover {
+            background: var(--dorado-claro);
+
+            transform:
+                translateY(-2px);
+        }
+
+        .btn-outline {
+            border:
+                1px solid #d8e0e7;
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+
+            color: var(--azul);
+        }
+
+
+        /* LOGO GRANDE */
+
+        .hero-logo {
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .hero-logo img {
+            width:
+                min(
+                    500px,
+                    100%
+                );
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.35);
+        }
+
+
+        /* ==============================
+           SECCIONES
+        ============================== */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-head {
+            text-align: center;
+
+            max-width: 720px;
+
+            margin:
+                0 auto
+                50px;
+        }
+
+        .label {
+            color: var(--dorado);
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 9px;
+        }
+
+        .section-head h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(
+                    34px,
+                    5vw,
+                    48px
+                );
+
+            line-height: 1.15;
+
+            color: var(--azul);
+
+            margin-bottom: 13px;
+        }
+
+        .section-head p {
+            color: var(--gris);
+        }
+
+
+        /* ==============================
+           NOSOTROS
+        ============================== */
+
+        .about {
+            background: var(--crema);
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+        .about h3 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 34px;
+
+            color: var(--azul);
+
+            margin-bottom: 17px;
+        }
+
+        .about p {
+            color: var(--gris);
+
+            margin-bottom: 15px;
+        }
+
+        .about-card {
+            background: var(--azul);
+
+            color: white;
+
+            padding: 42px;
+
+            border-radius: 10px;
+
+            box-shadow: var(--sombra);
+
+            border-left:
+                5px solid
+                var(--dorado);
+        }
+
+        .about-card h3 {
+            color: white;
+
+            font-size: 29px;
+        }
+
+
+        /* ==============================
+           SERVICIOS
+        ============================== */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .service {
+            padding: 30px;
+
+            border:
+                1px solid
+                var(--borde);
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+
+            background: white;
+        }
+
+        .service:hover {
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                var(--sombra);
+
+            border-color:
+                var(--dorado);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 8px;
+
+            background:
+                rgba(210,168,79,0.12);
+
+            color:
+                var(--dorado);
+
+            font-size: 23px;
+
+            margin-bottom: 17px;
+        }
+
+        .service h3 {
+            color: var(--azul);
+
+            margin-bottom: 8px;
+        }
+
+        .service p {
+            color: var(--gris);
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           VENTAJAS
+        ============================== */
+
+        .dark {
+            background: var(--azul);
+
+            color: white;
+        }
+
+        .dark .section-head h2 {
+            color: white;
+        }
+
+        .dark .section-head p {
+            color: #cbd5dd;
+        }
+
+        .advantages {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .adv {
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        .num {
+            font-size: 32px;
+
+            color:
+                var(--dorado);
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+        }
+
+        .adv p {
+            color: #cbd5dd;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           CLIENTES
+        ============================== */
+
+        .clients {
+            background: var(--crema);
+        }
+
+        .client-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .client {
+            background: white;
+
+            text-align: center;
+
+            padding: 35px 24px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid
+                var(--borde);
+        }
+
+        .client .big {
+            font-size: 38px;
+
+            margin-bottom: 12px;
+        }
+
+        .client h3 {
+            color: var(--azul);
+
+            margin-bottom: 7px;
+        }
+
+        .client p {
+            color: var(--gris);
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           PROCESO
+        ============================== */
+
+        .process-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .step {
+            padding: 28px;
+
+            border:
+                1px solid
+                var(--borde);
+
+            border-radius: 10px;
+        }
+
+        .step b {
+            color:
+                var(--dorado);
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+        }
+
+        .step h3 {
+            color: var(--azul);
+
+            margin:
+                12px 0 7px;
+        }
+
+        .step p {
+            color: var(--gris);
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           CONTACTO
+        ============================== */
+
+        .contact {
+            background: var(--crema);
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.8fr
+                1.2fr;
+
+            gap: 55px;
+        }
+
+        .contact h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 42px;
+
+            color: var(--azul);
+
+            margin-bottom: 15px;
+        }
+
+        .contact-intro {
+            color: var(--gris);
+
+            margin-bottom: 25px;
+        }
+
+        .detail {
+            margin: 17px 0;
+        }
+
+        .detail strong {
+            display: block;
+
+            color: var(--azul);
+        }
+
+        .detail span {
+            color: var(--gris);
+        }
+
+
+        /* FORMULARIO */
+
+        .form {
+            background: white;
+
+            padding: 32px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                var(--sombra);
+
+            border:
+                1px solid
+                var(--borde);
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .field label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: var(--azul);
+
+            margin-bottom: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border:
+                1px solid
+                #ddd9d0;
+
+            border-radius: 5px;
+
+            font: inherit;
+
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color:
+                var(--dorado);
+        }
+
+        textarea {
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #04101b;
+
+            color: white;
+
+            padding:
+                45px 0
+                24px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                2fr
+                1fr
+                1fr;
+
+            gap: 40px;
+
+            padding-bottom: 30px;
+        }
+
+        .footer-logo img {
+            width: 130px;
+
+            height: 80px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            margin-bottom: 12px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #9eabb7;
+
+            font-size: 13px;
+        }
+
+        .footer h4 {
+            color:
+                var(--dorado);
+
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            display: block;
+
+            margin-bottom: 7px;
+        }
+
+        .bottom {
+            border-top:
+                1px solid
+                rgba(255,255,255,.1);
+
+            padding-top: 18px;
+
+            text-align: center;
+
+            color: #7e8b96;
+
+            font-size: 11px;
+        }
+
+
+        /* ==============================
+           TABLET
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 78px;
+
+                left: 0;
+
+                width: 100%;
+
+                background:
+                    var(--azul);
+
+                padding: 22px;
+
+                flex-direction: column;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-logo {
+                order: -1;
+            }
+
+            .hero-logo img {
+                max-width: 430px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .advantages,
+            .process-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* ==============================
+           MÓVIL
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .nav-logo img {
+                width: 92px;
+
+                height: 58px;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .services-grid,
+            .advantages,
+            .client-grid,
+            .process-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-logo img {
+                width: 100%;
+            }
+
+            .form {
+                padding: 24px;
+            }
+
+            .contact h2 {
+                font-size: 35px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================
+     CABECERA
+====================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a
+            href="#inicio"
+            class="nav-logo"
+        >
+
+            <img
+                src="logo.png"
+                alt="AURUM Asesoría Empresarial"
+            >
+
+        </a>
+
+
+        <div
+            class="menu"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </div>
+
+
+        <nav
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+            <a href="#servicios">
+                Servicios
+            </a>
+
+            <a href="#clientes">
+                Clientes
+            </a>
+
+            <a
+                href="#contacto"
+                class="nav-cta"
+            >
+                Contacto
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ======================================
+     INICIO
+====================================== -->
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+    <div class="container hero-grid">
+
+
+        <div>
+
+            <span class="hero-kicker">
+                ASESORÍA EMPRESARIAL
+            </span>
+
+
+            <h1>
+
+                Tu tranquilidad
+
+                <span>
+                    financiera
+                </span>
+
+                empieza aquí.
+
+            </h1>
+
+
+            <p>
+
+                Soluciones de asesoramiento
+                fiscal, contable, laboral,
+                financiero y legal para
+                empresas, autónomos y particulares.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    class="btn btn-gold"
+                    href="#contacto"
+                >
+                    Solicitar asesoramiento
+                </a>
+
+
+                <a
+                    class="btn btn-outline"
+                    href="#servicios"
+                >
+                    Ver servicios
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-logo">
+
+            <img
+                src="logo.png"
+                alt="AURUM Asesoría Empresarial"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     NOSOTROS
+====================================== -->
+
+<section
+    class="about"
+    id="nosotros"
+>
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="label">
+                Sobre AURUM
+            </div>
+
+
+            <h2>
+                Una asesoría pensada
+                para darte tranquilidad
+            </h2>
+
+
+            <p>
+                Un servicio integral para facilitar
+                la gestión de tus obligaciones
+                y apoyar tus decisiones.
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <div>
+
+                <h3>
+                    Más que una asesoría
+                </h3>
+
+
+                <p>
+
+                    AURUM presta servicios de gestoría
+                    y asesoramiento a empresas y
+                    particulares en materias
+                    administrativas, contables,
+                    fiscales, financieras y de apoyo
+                    a la gestión empresarial.
+
+                </p>
+
+
+                <p>
+
+                    Trabajamos con una visión cercana
+                    y personalizada, adaptando el
+                    acompañamiento a las necesidades
+                    de cada cliente.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    Nuestro compromiso
+                </h3>
+
+
+                <p>
+
+                    Ofrecer soluciones claras y
+                    profesionales que ayuden a
+                    nuestros clientes a gestionar
+                    mejor sus proyectos y obligaciones.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     SERVICIOS
+====================================== -->
+
+<section id="servicios">
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="label">
+                Nuestros servicios
+            </div>
+
+
+            <h2>
+                Soluciones integrales
+            </h2>
+
+
+            <p>
+                Todo el asesoramiento que necesitas
+                en un mismo lugar.
+            </p>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <article class="service">
+
+                <div class="icon">
+                    €
+                </div>
+
+                <h3>
+                    Asesoría fiscal
+                </h3>
+
+                <p>
+
+                    Apoyo en la gestión y planificación
+                    de obligaciones fiscales y tributarias.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="icon">
+                    #
+                </div>
+
+                <h3>
+                    Asesoría contable
+                </h3>
+
+                <p>
+
+                    Organización y gestión de la
+                    contabilidad y de la información
+                    económica.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="icon">
+                    ♙
+                </div>
+
+                <h3>
+                    Asesoría laboral
+                </h3>
+
+                <p>
+
+                    Apoyo en contratos, nóminas y
+                    obligaciones relacionadas con
+                    la actividad laboral.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="icon">
+                    ◫
+                </div>
+
+                <h3>
+                    Asesoría financiera
+                </h3>
+
+                <p>
+
+                    Análisis y planificación para
+                    apoyar una mejor gestión financiera.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="icon">
+                    ⚖
+                </div>
+
+                <h3>
+                    Asesoría legal
+                </h3>
+
+                <p>
+
+                    Orientación y apoyo en cuestiones
+                    jurídicas relacionadas con la
+                    actividad empresarial.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Gestión administrativa
+                </h3>
+
+                <p>
+
+                    Gestión documental y apoyo en
+                    diferentes trámites administrativos.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     VENTAJAS
+====================================== -->
+
+<section class="dark">
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="label">
+                ¿Por qué AURUM?
+            </div>
+
+
+            <h2>
+                Confianza para tomar decisiones
+            </h2>
+
+
+            <p>
+
+                Una forma de trabajar basada
+                en cercanía, transparencia
+                y profesionalidad.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="advantages">
+
+
+            <div class="adv">
+
+                <div class="num">
+                    01
+                </div>
+
+                <h3>
+                    Atención personalizada
+                </h3>
+
+                <p>
+                    Atención adaptada a las
+                    necesidades de cada cliente.
+                </p>
+
+            </div>
+
+
+
+            <div class="adv">
+
+                <div class="num">
+                    02
+                </div>
+
+                <h3>
+                    Servicio integral
+                </h3>
+
+                <p>
+                    Fiscal, contable, laboral,
+                    financiero y legal.
+                </p>
+
+            </div>
+
+
+
+            <div class="adv">
+
+                <div class="num">
+                    03
+                </div>
+
+                <h3>
+                    Transparencia
+                </h3>
+
+                <p>
+                    Comunicación clara y directa
+                    durante la gestión.
+                </p>
+
+            </div>
+
+
+
+            <div class="adv">
+
+                <div class="num">
+                    04
+                </div>
+
+                <h3>
+                    Profesionalidad
+                </h3>
+
+                <p>
+                    Soluciones orientadas a
+                    facilitar la gestión.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     CLIENTES
+====================================== -->
+
+<section
+    class="clients"
+    id="clientes"
+>
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="label">
+                Nuestros clientes
+            </div>
+
+
+            <h2>
+                Para cada etapa de tu proyecto
+            </h2>
+
+        </div>
+
+
+
+        <div class="client-grid">
+
+
+            <div class="client">
+
+                <div class="big">
+                    🏢
+                </div>
+
+                <h3>
+                    Empresas y PYMES
+                </h3>
+
+                <p>
+                    Apoyo en la gestión y
+                    organización empresarial.
+                </p>
+
+            </div>
+
+
+
+            <div class="client">
+
+                <div class="big">
+                    💼
+                </div>
+
+                <h3>
+                    Autónomos
+                </h3>
+
+                <p>
+                    Asesoramiento para gestionar
+                    tu actividad profesional.
+                </p>
+
+            </div>
+
+
+
+            <div class="client">
+
+                <div class="big">
+                    👤
+                </div>
+
+                <h3>
+                    Particulares
+                </h3>
+
+                <p>
+                    Orientación y apoyo en diferentes
+                    gestiones administrativas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     PROCESO
+====================================== -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div class="label">
+                Nuestro proceso
+            </div>
+
+
+            <h2>
+                Trabajamos contigo paso a paso
+            </h2>
+
+        </div>
+
+
+
+        <div class="process-grid">
+
+
+            <div class="step">
+
+                <b>
+                    PASO 01
+                </b>
+
+                <h3>
+                    Primera consulta
+                </h3>
+
+                <p>
+                    Conocemos tu situación
+                    y tus necesidades.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <b>
+                    PASO 02
+                </b>
+
+                <h3>
+                    Análisis
+                </h3>
+
+                <p>
+                    Analizamos el caso y detectamos
+                    las necesidades principales.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <b>
+                    PASO 03
+                </b>
+
+                <h3>
+                    Propuesta
+                </h3>
+
+                <p>
+                    Diseñamos una solución adaptada
+                    a tu situación.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <b>
+                    PASO 04
+                </b>
+
+                <h3>
+                    Seguimiento
+                </h3>
+
+                <p>
+                    Acompañamos la gestión y
+                    evolución del proyecto.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     CONTACTO
+====================================== -->
+
+<section
+    class="contact"
+    id="contacto"
+>
+
+    <div class="container contact-grid">
+
+
+        <div>
+
+            <div class="label">
+                Contacto
+            </div>
+
+
+            <h2>
+                Hablemos de tu proyecto
+            </h2>
+
+
+            <p class="contact-intro">
+
+                Cuéntanos qué necesitas y
+                estudiaremos la mejor forma
+                de ayudarte.
+
+            </p>
+
+
+            <div class="detail">
+
+                <strong>
+                    AURUM – Consultores
+                    Legales y Financieros S.L.
+                </strong>
+
+                <span>
+                    Santander, Cantabria, España
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>
+                    Actividad
+                </strong>
+
+                <span>
+                    Asesoramiento fiscal,
+                    contable, laboral,
+                    financiero y legal.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <form
+            class="form"
+            onsubmit="sendForm(event)"
+        >
+
+
+            <div class="field">
+
+                <label>
+                    Nombre
+                </label>
+
+                <input
+                    required
+                    type="text"
+                    placeholder="Tu nombre"
+                >
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    required
+                    type="email"
+                    placeholder="tu@email.com"
+                >
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+                    Tipo de cliente
+                </label>
+
+                <select required>
+
+                    <option value="">
+                        Selecciona
+                    </option>
+
+                    <option>
+                        Empresa
+                    </option>
+
+                    <option>
+                        Autónomo
+                    </option>
+
+                    <option>
+                        Particular
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+                    Servicio de interés
+                </label>
+
+                <select required>
+
+                    <option value="">
+                        Selecciona
+                    </option>
+
+                    <option>
+                        Fiscal
+                    </option>
+
+                    <option>
+                        Contable
+                    </option>
+
+                    <option>
+                        Laboral
+                    </option>
+
+                    <option>
+                        Financiero
+                    </option>
+
+                    <option>
+                        Legal
+                    </option>
+
+                    <option>
+                        Gestión administrativa
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+                    Mensaje
+                </label>
+
+                <textarea
+                    required
+                    placeholder="Cuéntanos qué necesitas..."
+                ></textarea>
+
+            </div>
+
+
+
+            <button
+                class="btn btn-gold"
+                type="submit"
+            >
+                Solicitar asesoramiento
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     FOOTER
+====================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-logo">
+
+                    <img
+                        src="logo.png"
+                        alt="AURUM"
+                    >
+
+                </div>
+
+
+                <p>
+
+                    Asesoría fiscal,
+                    contable, laboral,
+                    financiera y legal.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Navegación
+                </h4>
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+
+                <a href="#servicios">
+                    Servicios
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Servicios
+                </h4>
+
+                <a href="#servicios">
+                    Fiscal
+                </a>
+
+                <a href="#servicios">
+                    Contable
+                </a>
+
+                <a href="#servicios">
+                    Laboral
+                </a>
+
+                <a href="#servicios">
+                    Financiero
+                </a>
+
+                <a href="#servicios">
+                    Legal
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="bottom">
+
+            © 2026 AURUM –
+            Consultores Legales y
+            Financieros S.L.
+
+            <br><br>
+
+            Empresa ficticia creada
+            exclusivamente para fines académicos.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ======================================
+     JAVASCRIPT
+====================================== -->
+
+<script>
+
+
+    /* MENÚ MÓVIL */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .toggle("active");
+
+    }
+
+
+    /* CERRAR MENÚ AL PULSAR */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .getElementById("navLinks")
+                        .classList
+                        .remove("active");
+
+                }
+            );
+
+        });
+
+
+    /* FORMULARIO */
+
+    function sendForm(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Gracias por contactar con AURUM.\n\n" +
+            "Este formulario es una demostración " +
+            "para el proyecto académico."
+        );
+
+    }
+
+</script>
+
+
+</body>
+</html>
