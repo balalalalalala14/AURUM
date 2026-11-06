@@ -285,7 +285,7 @@
             color: var(--gold-bright);
         }
 
-        /* PROCESO PASO A PASO (01, 02, 03, 04) */
+        /* PASO A PASO / METODOLOGÍA */
         .process-section {
             padding: 100px 0;
         }
@@ -380,7 +380,90 @@
             color: var(--text-gray);
         }
 
-        /* VENTAJAS (GRID CON ICONOS Y RED DE NODOS) */
+        /* SECCIÓN NUESTRO EQUIPO (ESTILO POP-OUT CÍRCULO DORADO) */
+        .team-section {
+            padding: 100px 0;
+            background: rgba(15, 17, 21, 0.6);
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 200px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .circle-bg {
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            background: radial-gradient(circle, #ffe57f 0%, #e6b800 60%, #b38f00 100%);
+            border-radius: 50%;
+            bottom: 0;
+            z-index: 1;
+            box-shadow: 0 0 25px var(--gold-glow);
+        }
+
+        .member-img {
+            position: relative;
+            width: 180px;
+            height: auto;
+            max-height: 210px;
+            object-fit: cover;
+            z-index: 2;
+            transition: var(--transicion);
+        }
+
+        .team-card:hover .member-img {
+            transform: translateY(-8px);
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: var(--gold-bright);
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .member-desc {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin: 0;
+            max-width: 250px;
+        }
+
+        /* VENTAJAS COMPETITIVAS */
         .advantages-section {
             padding: 100px 0;
         }
@@ -587,6 +670,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#servicios">Servicios</a>
+                <a href="#equipo">Equipo</a>
                 <a href="#clientes">Clientes</a>
                 <a href="#contacto">Contacto</a>
             </nav>
@@ -616,7 +700,7 @@
                     
                     <div class="metrics-badge-grid">
                         <div class="metric-badge"><i data-lucide="check-circle-2"></i> Asesoramiento proactivo</div>
-                        <div class="metric-badge"><i data-lucide="clock"></i> Respuesta en < 24h</div>
+                        <div class="metric-badge"><i data-lucide="clock"></i> Respuesta en &lt; 24h</div>
                         <div class="metric-badge"><i data-lucide="shield-check"></i> Garantía Legal</div>
                         <div class="metric-badge"><i data-lucide="file-text"></i> Transparencia Total</div>
                     </div>
@@ -700,6 +784,59 @@
                     <h3>Gestión Administrativa</h3>
                     <p>Tramitación de licencias, certificados corporativos, gestiones ante organismos públicos y protección de datos.</p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NUESTRO EQUIPO DIRECTIVO -->
+    <section class="team-section" id="equipo">
+        <div class="container">
+            <h2 class="section-title">Equipo <span>Directivo</span></h2>
+            
+            <div class="team-grid">
+                <!-- INTEGRANTE 1: CEO -->
+                <div class="team-card">
+                    <div class="avatar-wrapper">
+                        <div class="circle-bg"></div>
+                        <img src="foto-ceo.jpg" alt="CEO - Dirección General" class="member-img">
+                    </div>
+                    <h3 class="member-name">Carlos AURUM</h3>
+                    <p class="member-role">Dirección General &amp; CEO</p>
+                    <p class="member-desc">Especialista en estrategia corporativa y dirección ejecutiva de grandes cuentas.</p>
+                </div>
+
+                <!-- INTEGRANTE 2: Fiscal & Contable -->
+                <div class="team-card">
+                    <div class="avatar-wrapper">
+                        <div class="circle-bg"></div>
+                        <img src="foto-fiscal.jpg" alt="Jefa Área Fiscal" class="member-img">
+                    </div>
+                    <h3 class="member-name">Elena Martínez</h3>
+                    <p class="member-role">Jefa Área Fiscal &amp; Contable</p>
+                    <p class="member-desc">Experta en optimización tributaria, auditoría interna e Impuesto sobre Sociedades.</p>
+                </div>
+
+                <!-- INTEGRANTE 3: Laboral & R.H. -->
+                <div class="team-card">
+                    <div class="avatar-wrapper">
+                        <div class="circle-bg"></div>
+                        <img src="foto-laboral.jpg" alt="Jefe Área Laboral" class="member-img">
+                    </div>
+                    <h3 class="member-name">David Fernández</h3>
+                    <p class="member-role">Jefe Área Laboral &amp; R.H.</p>
+                    <p class="member-desc">Especializado en gestión de personal, relaciones laborales y convenios colectivos.</p>
+                </div>
+
+                <!-- INTEGRANTE 4: Legal & Financiero -->
+                <div class="team-card">
+                    <div class="avatar-wrapper">
+                        <div class="circle-bg"></div>
+                        <img src="foto-legal.jpg" alt="Jefa Área Legal" class="member-img">
+                    </div>
+                    <h3 class="member-name">Sofia Gómez</h3>
+                    <p class="member-role">Jefa Área Legal &amp; Financiera</p>
+                    <p class="member-desc">Asesora en derecho mercantil, reestructuración societaria y planes de viabilidad.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -800,7 +937,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 AURUM Asesoría & Consultoría Empresarial S.L. Todos los derechos reservados.</p>
+            <p>&copy; 2026 AURUM Asesoría &amp; Consultoría Empresarial S.L. Todos los derechos reservados.</p>
         </div>
     </footer>
 
